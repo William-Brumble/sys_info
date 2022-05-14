@@ -14,7 +14,7 @@ Example usage:
 from system.factory import Factory
 
 # instantiate the class using the factory method
-db_path = "/path/to/db"
+db_path = "/path/to/db/database_name.db"
 tbl_name = "table_name"
 sys_info = Factory.create_system(db_path, tbl_name)
 
