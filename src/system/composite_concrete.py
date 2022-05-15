@@ -1,6 +1,4 @@
 
-""" System Composite """
-
 from .composite_abc import CompositeAbstract
 from .leaf_information_abc import LeafInformationAbc
 from .leaf_database_abc import LeafDatabaseAbc
@@ -32,7 +30,9 @@ class Composite(CompositeAbstract):
             "{},".format(self._information_leaf.get_node()) +
             "{},".format(self._information_leaf.get_release()) +
             "{},".format(self._information_leaf.get_version()) +
-            "{})".format(self._information_leaf.get_machine()))
+            "{})".format(self._information_leaf.get_machine()()) +
+            "{})".format(self._information_leaf.get_total_ram()()) +
+            "{})".format(self._information_leaf.get_cpu_count()()))
         return representation
 
     def __str__(self) -> str:
@@ -40,7 +40,9 @@ class Composite(CompositeAbstract):
             "node={},".format(self._information_leaf.get_node()) +
             "release={},".format(self._information_leaf.get_release()) +
             "version={},".format(self._information_leaf.get_version()) +
-            "machine={})".format(self._information_leaf.get_machine()))
+            "machine={})".format(self._information_leaf.get_machine()) +
+            "total_ram={})".format(self._information_leaf.get_total_ram()) +
+            "cpu_count={})".format(self._information_leaf.get_cpu_count()))
         return string
 
     def get_system(self):

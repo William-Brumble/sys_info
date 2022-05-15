@@ -1,6 +1,4 @@
 
-""" System Leaf Information """
-
 import platform
 import psutil
 
